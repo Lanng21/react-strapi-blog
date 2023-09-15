@@ -1,19 +1,27 @@
-# React + TypeScript + Vite
+# blog-react-strapi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Installation and Setup Instructions
 
-Currently, two official plugins are available:
+##### Example:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone down this repository. You will need `node` .
 
-## How to run
+New terminal:
 
-- clone this repository:
+`cd .\src\strapi\`
 
-```
-   git clone https://github.com/PhamNhuQuocBao/Blog-api-strapi
-   cd Blog-api-strapi
-   npm i
-   npm run dev
-```
+`yarn develop`
+
+And another terminal:
+
+Installation:
+
+`npm install`
+
+To Start Server:
+
+`npm run dev`
+
+To Visit App:
+
+`http://localhost:5173/`
