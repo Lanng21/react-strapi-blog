@@ -1,0 +1,20 @@
+.blog__item {
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+  .btn__group {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    // display: block;
+    .btn {
+      margin-right: 5px;
+    }
+  }
+}
+
+// .blog__item:hover .btn__group {
+//   display: block;
+// }
