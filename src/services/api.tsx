@@ -10,9 +10,10 @@ const API = axios.create({
 
 export const getAllBlog = async () => {
   try {
-    const res = await API.get("/blogs");
+    const res = await API.get("/blogs?populate=*");
 
     if (res.status === 200) {
+      // console.log(res.data);
       return res.data;
     }
   } catch (err) {

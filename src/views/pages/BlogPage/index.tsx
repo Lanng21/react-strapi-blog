@@ -1,7 +1,8 @@
-import React, { FC, memo, useEffect, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DataBlog } from "../../../components/Form";
 import { useBlogContext } from "../../../hooks/useBlogContext";
+import HTMLParser from "html-react-parser";
 
 const BlogPage: FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,7 +24,8 @@ const BlogPage: FC = () => {
         <>
           <h2>{blog.title}</h2>
           <p>{blog.description}</p>
-          <p>{blog.content}</p>
+          <p>{HTMLParser(blog.content)}</p>
+          {/* {HTMLParser(dataForm.content)} */}
         </>
       ) : (
         <p>Blog not found.</p>
