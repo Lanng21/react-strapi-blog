@@ -25,7 +25,7 @@ const Form: FC<FormProps> = ({ id, onCancel }) => {
     content: "",
   });
 
-  const [ckeditor] = useState("");
+  const [ckeditor, setCkeditor] = useState<string>("");
 
   useEffect(() => {
     if (id) {
@@ -38,19 +38,19 @@ const Form: FC<FormProps> = ({ id, onCancel }) => {
     }
   }, []);
 
-  const handleAutoGenerate = useCallback(() => {
+  const handleAutoGenerate = useCallback(async () => {
     const openai = new OpenAI({
-      apiKey: "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",
+      apiKey: import.meta.env.VITE_KEY,
       dangerouslyAllowBrowser: true,
       timeout: 5000,
     });
 
-    const res = openai.chat.completions.create({
+    const res = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: "what your name?" }],
     });
 
-    console.log(res);
+    setCkeditor(res.choices[0].message.content as string);
   }, []);
 
   const handleDataChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
